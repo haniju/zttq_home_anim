@@ -1,0 +1,110 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;1,300&display=swap');
+
+@media all and (min-width: 1300px) {
+}
+
+h1{
+  margin: 0px;
+  padding: 0px;
+  font-family: 'CeraPro', sans-serif;
+  font-size: 20px;
+  line-height:100%;
+  text-align: left;
+  font-weight: 400;
+}
+h1.titre {
+  margin-bottom: 25px;
+}
+zttq-home h1 {
+}
+
+h2{
+  line-height:130%;
+  font-family:'Open Sans', sans-serif;
+  font-size:17px;
+  font-weight:500;
+  letter-spacing:1px;
+  margin: 40px 0px 0px 0px;
+  padding: 0px;
+}
+zttq-home h2 {
+  margin: 0px 0px 10px 0px !important;
+}
+/*
+.intro h2 {
+  text-align: center;
+}*/
+
+
+
+h3{
+  font-size:18px;
+  line-height:140%;
+  color: black;
+  font-family:'Open Sans', sans-serif;
+  font-weight: 500;
+  margin: 0px 0px 0px 0px;
+  padding: 0px 0px 0px 0px;
+  letter-spacing:2px;
+
+}
+.nav h3 {
+}
+
+
+h4{
+  line-height:130%;
+  font-family: 'Titillium Web', sans-serif;
+  font-size:4vw;
+  color:white;
+  font-weight:200;
+  letter-spacing:2px;
+  margin: 0px;
+  margin-bottom:40px;
+  padding: 0px;
+}
+h4:hover, a.toc:hover p {
+  animation: color-change 6s infinite;
+  cursor: pointer;
+}
+@keyframes color-change {
+    0% { color: white; }
+    16% { color: var(--y0); }
+    32% { color: var(--h1); }
+    48% { color: var(--h2); }
+    62% { color: var(--h3); }
+    78% { color: var(--h4); }
+    100% { color: white; }
+}
+.footer h4 {
+  color: black;
+}
+
+p, label{
+  line-height:140%;
+  font-family:'Open Sans', sans-serif;
+  font-size: 17px;
+  color: var(--y0);
+  font-weight:300;
+  letter-spacing:1px;
+  margin: 0px 0px 0px 0px;
+  padding: 0px 0px 0px 0px;
+}
+.paragraphes p {
+  margin-top: 30px;
+}
+.toc p {
+  color: black;
+}
+
+p.small{
+  font-weight:200;
+  font-size:13px;
+  font-style: italic;
+}
+p.dark{
+  color: #000;
+  font-weight:200;
+  font-size:13px;
+  font-style: italic;
+}

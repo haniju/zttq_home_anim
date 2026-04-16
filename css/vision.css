@@ -1,0 +1,30 @@
+zttq-vision {
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  height: 100%;
+  box-sizing: border-box;
+  overflow-x: hidden;
+}
+zttq-vision .slide-texte {
+  right: 5%;
+  width: 45%;
+  left: unset;
+}
+zttq-vision .slide-texte h1, zttq-vision .slide-texte {
+  text-align: right;
+}
+
+zttq-proposition {
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  height: 100%;
+  box-sizing: border-box;
+  overflow-x: hidden;
+}
+zttq-proposition .slide-texte {
+  width: 40%;
+}

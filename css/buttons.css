@@ -1,0 +1,201 @@
+@media all and (min-width: 1300px) {
+}
+button {
+  border: none;
+  padding: 0px;
+  /*display: flex;*/
+	align-items: center;
+  margin: 0px;
+  cursor: pointer;
+	box-sizing: border-box;
+}
+.nav {
+	width: 20%;
+	height: 100%;
+	background-color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+/*.nav:first-of-type {
+  width: 40%;
+  justify-content: flex-start;
+  padding-left: 3%;
+}*/
+.z-declancheur {
+	background-color: white;
+    width: 30%;
+    height: 45px;
+    text-align: center;
+    text-decoration: none;
+    justify-content: center;
+    top: 80vh;
+    left: 35%;
+    position: absolute;
+    box-shadow: 0px 0px 10px #9f9f9f;
+}
+
+.declancheur {
+	background-color: #FFE98A;
+	width: 30%;
+	height: 45px;
+	text-align: center;
+	text-decoration: none;
+	justify-content: center;
+	box-shadow: 0px 0px 10px #9f9f9f;
+  transition: text-transform 1s;
+}
+.declancheur:hover {
+  text-transform: uppercase;
+}
+#section2 .declancheur {
+  align-self: flex-end;
+  margin-top: 110px;
+}
+.lien {
+	background-color: unset;
+	justify-content: flex-start;
+  margin-top: 10px;
+}
+.lien h3 {
+  font-size: 15px;
+  position: relative;
+}
+.lien h3::before {
+  content: ' ';
+	position: absolute;
+	display: inline-block;
+	z-index: -1;
+	height: 1px;
+	width: 100%;
+	background-color: black;
+	margin: 19px 0px 0px 0px;
+  letter-spacing: 1px;
+}
+a.appel, button.appel {
+  width: max-content;
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 45px;
+  padding: 0px 40px;
+  background-color: white;
+  box-shadow: 0px 0px 10px #9f9f9f;
+}
+zttq-contact .appel {
+  width: 100%;
+  margin-top: 6%;
+  margin-bottom: 0px;
+}
+a {
+  text-decoration: none;
+	width: max-content;
+}
+a.pictos:link, a.pictos:active, a.pictos:visited, a.pictos{
+  color:unset;
+}
+/*
+.title a.pictos {
+  display: flex;
+	flex-direction: column;
+  padding: 0px 20px;
+	margin: 20px 0px;
+}*/
+a.toc {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+}
+a.toc:hover .point {
+	border: 1px solid white;
+}
+.title-m {
+
+}
+a.pictos, button.pictos {
+	display: flex;
+	position: fixed;
+	z-index: 15;
+	bottom: 1vw;
+}
+a.portfolio, a.cv, button.pictos {
+	left: 1vw;
+}
+a.contact {
+	left: 6vw;
+}
+a.download {
+	left: 11vw;
+}
+
+a.portfolio img, a.contact img, button.contact img, a.cv img, a.download img, button.pictos img {width:4vw;}
+/*
+a.portfolio img, a.cv img {
+ transition: transform 300ms ease-in-out;
+}
+a.portfolio img:hover{
+ transform: translateX(-10px) translateY(10px);
+}*/
+a.contact img, a.portfolio img, a.cv img, a.download img, button.pictos img {
+	transition: transform 300ms ease-in-out;
+}
+a.contact img:hover, a.download img:hover, a.cv img:hover, a.portfolio img:hover, button.pictos img:hover {
+	transform: translateX(10px) translateY(-10px);
+}
+
+.contact-box a.portfolio, .contact-box a.cv {
+	position: relative;
+	top: 0px;
+	right: 0px;
+	padding: 20px;
+	margin: 0px 5px;
+}
+.contact a.pictos, .contact a.cv, .contact a.portfolio {
+	position: relative;
+	right: auto;
+}
+.activites a {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+	padding: 7px 0px;
+	box-sizing: border-box;
+}
+
+.project-button {
+  flex-basis: content;
+  font-family: 'Titillium Web', sans-serif;
+  font-weight: 100;
+  font-size: 16px;
+  letter-spacing:2px;
+  text-transform: uppercase;
+  margin: 5px 7px;
+	background-color: white;
+}
+.project-button a:hover {
+	animation: color-change-b 6s infinite;
+}
+@keyframes color-change-b {
+    0% { background-color: white; }
+    16% { background-color: var(--y0); }
+    32% { background-color: var(--h1); }
+    48% { background-color: var(--h2); }
+    62% { background-color: var(--h3); }
+    78% { background-color: var(--h4); }
+    100% { background-color: white; }
+}
+.project-button a {
+  padding: 0px 10px;
+	color: black;
+}
+.project-box:hover .project-button a {color: black;}
+.project-box:hover .project-button:hover a {font-weight: bold;}
+
+.contact .project-button {
+  width: auto;
+  margin: 7px 0px;
+  background-color: white;
+}

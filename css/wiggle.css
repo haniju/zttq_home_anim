@@ -1,0 +1,63 @@
+/* Vibration des images */
+@keyframes wiggle {
+0% { transform: rotate(0deg); margin: 0px 0px 0px 0px;}
+15% { transform: rotate(1deg); margin: 1px -1px 0px 0px;}
+25% { transform: rotate(0deg); margin: -1px 1px 0px 0px;}
+25% { transform: rotate(-1deg); margin: 0px -1px 0px 0px;}
+45% { transform: rotate(1deg); margin: 1px 1px 0px 0px;}
+55% { transform: rotate(0deg); margin: -1px 0px 0px 0px;}
+65% { transform: rotate(-1deg); margin: 1px 1px 0px 0px;}
+75% { transform: rotate(1deg); margin: 0px -1px 0px 0px;}
+80% { transform: rotate(-1deg); margin: -2px 1px 0px 0px;}
+85% { transform: rotate(0deg); margin: 0px -1px 0px 0px;}
+95% { transform: rotate(1deg); margin: 1px 1px 0px 0px;}
+100% { transform: rotate(-1deg); margin: -1px -1px 0px 0px;}
+}
+
+@keyframes wiggle3 {
+    0% { transform: rotate(1deg); padding: 1px 0px;}
+   80% { transform: rotate(-1deg); padding: -2px 2px;}
+   85% { transform: rotate(0deg); padding: 0px -1px;}
+   95% { transform: rotate(1deg); padding: 2px 1px;}
+  100% { transform: rotate(-1deg); padding: -1px -2px;}
+}
+.wiggle, .draggable {
+  display: inline-block;
+  animation: wiggle 3s infinite;
+}
+.draggable:nth-of-type(1) {
+  animation-delay: 0.1s;
+}
+.draggable:nth-of-type(2) {
+  animation-delay: 0.3s;
+}
+.draggable:nth-of-type(3) {
+  animation-delay: 2s;
+}
+.draggable:nth-of-type(4) {
+  animation-delay: 1.5s;
+}
+.draggable:nth-of-type(5) {
+  animation-delay: 0.2s;
+}
+.draggable:nth-of-type(6) {
+  animation-delay: 1s;
+}
+.draggable:nth-of-type(7) {
+  animation-delay: 0s;
+}
+.wiggle:hover, .wiggle2:hover {
+  animation: none;
+}
+
+@keyframes wiggle2 {
+    0% {padding: 1px 0px; }
+   80% {padding: -2px 2px; }
+   85% {padding: 0px -1px; }
+   95% {padding: 2px 1px; }
+  100% {padding: -1px -2px; }
+}
+.wiggle2 {
+  display: inline-block;
+  animation: wiggle2 1s infinite;
+}

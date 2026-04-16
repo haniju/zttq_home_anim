@@ -1,0 +1,136 @@
+.anim-start {
+  animation: beewiggle 5s infinite;
+  z-index: 22;
+}
+@keyframes beewiggle {
+0% { transform: rotate(0deg) translate(0px,-50px);}
+25% { transform: rotate(5deg) translate(5px,10px);}
+100% { transform: rotate(0deg) translate(0px,-50px);}
+}
+.anim-start-texte {
+  animation: textwiggle 5s infinite;
+  z-index: 22;
+  text-align: right;
+}
+@keyframes textwiggle {
+0% { transform: translate(0px,-30px);}
+35% { transform: translate(5px,0px);}
+100% { transform: translate(0px,-20px);}
+}
+
+/*
+@keyframes beewiggle {
+0% { transform: rotate(0deg) translate(0px,0px);}
+25% { transform: rotate(20deg) translate(25px,9px);}
+45% { transform: rotate(36deg) translate(15px,17px);}
+50% { transform: rotate(-6deg) translate(15px,27px);}
+65% { transform: rotate(68deg) translate(21px,17px);}
+75% { transform: rotate(33deg) translate(10px,29px);}
+80% { transform: rotate(66deg) translate(15px,-4px);}
+85% { transform: rotate(28deg) translate(15px,-24px);}
+95% { transform: rotate(55deg) translate(-17px,11px);}
+100% { transform: rotate(0deg) translate(0px,0px);}
+}*/
+/*@keyframes beewiggle {
+0% { transform: rotate(0deg) translate(0px,0px);}
+15% { transform: rotate(97deg) translate(-15px,-24px);}
+25% { transform: rotate(45deg) translate(-21px,23px);}
+25% { transform: rotate(20deg) translate(25px,39px);}
+45% { transform: rotate(74deg) translate(15px,17px);}
+55% { transform: rotate(48deg) translate(-15px,-16px);}
+65% { transform: rotate(68deg) translate(21px,7px);}
+75% { transform: rotate(33deg) translate(10px,29px);}
+80% { transform: rotate(66deg) translate(15px,-4px);}
+85% { transform: rotate(28deg) translate(15px,-24px);}
+95% { transform: rotate(55deg) translate(-17px,11px);}
+100% { transform: rotate(0deg) translate(0px,0px);}
+}*/
+
+.beeOutIn {
+	animation: beeOutIn 5s infinite;
+  	position: absolute;
+  	height: 4%;
+  	top: -2%;
+}
+
+@keyframes beeOutIn {
+0%  { transform: translate(0%,0%) rotate(90deg); }
+45% { transform: translate(0%,200%) rotate(90deg) ;}
+55% { transform: translate(0%,200%) rotate(-90deg) ;}
+100% { transform: translate(0%,0%) rotate(-90deg)  ;}
+}
+
+.beeOutInContainer img:nth-child(1) { animation-delay: .5s }
+.beeOutInContainer img:nth-child(2) { animation-delay: 4s }
+.beeOutInContainer img:nth-child(3) { animation-delay: 1.5s }
+
+.butinage {
+	height: 4%;
+	animation: beewiggle 10s infinite;
+}
+
+.butinageContainer img:nth-child(2n + 0) { animation: beewiggle2 10s infinite; }
+
+.butinageContainer img:nth-child(4n + 0) { animation-delay: .5s }
+.butinageContainer img:nth-child(4n + 1) { animation-delay: .8s }
+.butinageContainer img:nth-child(4n + 3) { animation-delay: 1.2s }
+
+
+
+@keyframes beewiggle2 {
+0% { transform: rotate(0deg) translate(0px,0px);}
+15% { transform: rotate(78deg) translate(25px,29px);}
+25% { transform: rotate(74deg) translate(15px,17px);}
+25% { transform: rotate(97deg) translate(-15px,-24px);}
+45% { transform: rotate(45deg) translate(-21px,23px);}
+55% { transform: rotate(33deg) translate(10px,29px);}
+65% { transform: rotate(48deg) translate(-15px,-16px);}
+75% { transform: rotate(68deg) translate(21px,7px);}
+80% { transform: rotate(66deg) translate(15px,-4px);}
+85% { transform: rotate(55deg) translate(-17px,11px);}
+95% { transform: rotate(28deg) translate(15px,-24px);}
+100% { transform: rotate(0deg) translate(0px,0px);}
+}
+
+.vibration1 {
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: vibration1 5s infinite;
+}
+@keyframes vibration1 {
+0% { transform: rotate(20deg);}
+70% { transform: rotate(-20deg);}
+100% { transform: rotate(20deg);}
+}
+.vibration2 {
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: vibration2 6s infinite;
+}
+@keyframes vibration2 {
+0% { transform: rotate(0deg);}
+20% { transform: rotate(18deg);}
+100% { transform: rotate(0deg);}
+}
+.vibration3 {
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: vibration3 2s infinite;
+}
+@keyframes vibration3 {
+0% { transform: rotate(0deg);}
+15% { transform: rotate(10deg);}
+50% { transform: rotate(-40deg);}
+95% { transform: rotate(25deg);}
+100% { transform: rotate(0deg);}
+}
+.vibration-danse {
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: vibration3 3s infinite;
+}
+@keyframes vibration3 {
+0% { transform: rotate(0deg);}
+20% { transform: rotate(-3deg);}
+100% { transform: rotate(0deg);}
+}

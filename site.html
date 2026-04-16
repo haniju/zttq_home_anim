@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<!--[if lte IE 7]> <html class="ie-lte7" dir="ltr"> <![endif]-->
+<!--[if lte IE 9]> <html class="ie-lte9" dir="ltr"> <![endif]-->
+<!--[if !IE]><!--> <html dir="ltr">             <!--<![endif]-->
+<html>
+
+<head>
+  <title>Zététique</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width">
+  <link rel="icon" type="image/png" href="images/fav.png">
+  <link rel="stylesheet" type="text/css" href="css/base.css">
+  <link rel="stylesheet" type="text/css" href="css/lib/jk-rating-stars.min.css">
+
+  <!--  Materials CSS : version offline
+  <link rel="stylesheet" type="text/css" href="css/materials.css">-->
+  <!--si tu veux utiliser la version en ligne -->
+<link href="https://fonts.googleapis.com/css?family=Material+Icons|Material+Icons+Outlined|Material+Icons+Two+Tone|Material+Icons+Round|Material+Icons+Sharp" rel="stylesheet">
+<!--
+<link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/angular_material/1.1.12/angular-material.min.css"/>
+-->
+<link rel="stylesheet" href="css/lib/angular_material/1.1.12/angular-material.min.css"/>
+
+
+
+  <script type="text/javascript" src="./js/config.js"></script>
+
+  <!-- offline -->
+  <script type="text/javascript" src="./js/libs/angular/angular.min.js"></script>
+  <script type="text/javascript" src="./js/libs/angular/angular-animate.min.js"></script>
+  <script type="text/javascript" src="./js/libs/angular/angular-aria.min.js"></script>
+  <script type="text/javascript" src="./js/libs/angular/angular-sanitize.js"></script>
+  <script type="text/javascript" src="./js/libs/angular/angular_material/angular-material.min.js"></script>
+  <script type="text/javascript" src="./js/libs/uirouter/ui-router-core.js"></script>
+  <script type="text/javascript" src="./js/libs/uirouter/ui-router-angularjs.js"></script>
+
+   <!-- jQuery
+   <script src="https://code.jquery.com/jquery-3.5.1.js"
+            integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
+            crossorigin="anonymous"></script>
+            -->
+  <script type="text/javascript" src="./js/libs/jquery/jquery-3.5.1.js"></script>
+  <!-- Bootstrap
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+		integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+		crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+		integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+    crossorigin="anonymous"></script>
+  -->
+  <script type="text/javascript" src="./js/libs/popper/1.16.0/popper.min.js"></script>
+  <script type="text/javascript" src="./js/libs/bootstrap/4.4.1/bootstrap.min.js"></script>
+  <!-- online -->
+  <!-- <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.9/angular.min.js"></script>
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.9/angular-animate.min.js"></script>
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.9/angular-aria.min.js"></script>
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.9/angular-sanitize.js"></script>
+  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angular_material/1.1.12/angular-material.min.js"></script> -->
+  <!-- <script type="text/javascript" src="//unpkg.com/@uirouter/angularjs/release/angular-ui-router.min.js"></script> -->
+
+
+  <script type="text/javascript" src="./js/libs/checklist-model.js"></script>
+  <script type="text/javascript" src="./js/libs/jk-rating-stars.min.js"></script>
+
+  <script type="text/javascript" src="./js/libs/jquery/jquery.scrollTo.min.js"></script>
+
+  <script type="text/javascript" src="./js/app/site.module.js?v=1.1.3"></script>
+	<script type="text/javascript" src="./js/app/site.config.js?v=1.1.3"></script>
+  <script type="text/javascript" src="./js/app/site.service.js?v=1.1.3"></script>
+
+  <!--
+	<script type="text/javascript" src="./js/app/components/"></script>
+	 -->
+
+   <script type="text/javascript" src="./js/app/components/zttq-header.component.js"></script>
+   <script type="text/javascript" src="./js/app/components/zttq-footer.component.js"></script>
+   <script type="text/javascript" src="./js/app/components/zttq-contact.component.js"></script>
+   <script type="text/javascript" src="./js/app/components/zttq-proposition.component.js"></script>
+   <script type="text/javascript" src="./js/app/components/zttq-vision.component.js"></script>
+   <script type="text/javascript" src="./js/app/components/zttq-home.component.js"></script>
+
+   <script type="text/javascript" src="./js/app/components/zttq-faq.component.js"></script>
+   <script type="text/javascript" src="./js/app/components/zttq-mentions-legales.component.js"></script>
+
+   <script type="text/javascript" src="./js/app/components/home/zttq-home-section.component.js"></script>
+   <script type="text/javascript" src="./js/app/components/home/zttq-home-section-splash.component.js"></script>
+   <script type="text/javascript" src="./js/app/components/home/zttq-home-section-a.component.js"></script>
+   <script type="text/javascript" src="./js/app/components/home/zttq-home-section-a2.component.js"></script>
+   <script type="text/javascript" src="./js/app/components/home/zttq-home-section-b.component.js"></script>
+   <script type="text/javascript" src="./js/app/components/home/zttq-home-section-c.component.js"></script>
+   <script type="text/javascript" src="./js/app/components/home/zttq-home-section-d.component.js"></script>
+   <script type="text/javascript" src="./js/app/components/home/zttq-home-section-e.component.js"></script>
+
+</head>
+
+<body ng-app="zttqWebSite">
+  <div class="zttq-capsule_0">
+    <zttq-header class="title"></zttq-header>
+    <!-- le contenu de site à injecter ici -->
+    <div ui-view class="zttq-premiere"> </div>
+
+    <!-- loading iage -->
+    <div id="inprogress-image" style="display: flex; align-items: center; justify-content: center;">
+      <img src="./images/loading_loop_transp.gif" alt="">
+    </div>
+  </div>
+</body>
+</html>

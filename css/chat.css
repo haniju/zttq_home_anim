@@ -1,0 +1,40 @@
+.chat.chat-right {
+    opacity: 0;
+    transform: translate(30px);
+}
+.chat.chat-left {
+    opacity: 0;
+    transform: translate(-30px);
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .chat {
+    transition: opacity 0.75s ease, transform 1s ease;
+  }
+}
+
+.chat-transition.chat-right {
+    opacity: 1;
+    transform: translate(0px);
+}
+
+.chat-transition.chat-left {
+    opacity: 1;
+    transform: translate(0px);
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .apparition-hori {
+    transition: opacity 0.75s ease, transform 1s ease;
+  }
+}
+
+.apparition-hori{
+    opacity: 0;
+    transform: translate(0px, 20px);
+}
+
+.chat-transition.apparition-hori{
+    opacity: 1;
+    transform: translate(0px, 0px);
+}

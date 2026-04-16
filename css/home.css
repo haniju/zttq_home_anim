@@ -1,0 +1,92 @@
+zttq-home, .container-scroll {
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  /*height: calc(100vh - 55px);*/
+  /*padding: 55px 4% 0px 4%;*/
+  box-sizing: border-box;
+  /*overflow-x: hidden;*/
+  /*margin-top: 55px;*/
+}
+.zttq-section {
+  flex-direction: column;
+}
+.zttq-section{
+  position: relative;
+  display: flex;  /* n'est pas compatible avec Safari */
+  box-sizing: border-box;
+  /*height: 100vh;*/
+}
+
+.slide-splash {
+  position: relative;
+  display: flex;
+  box-sizing: border-box;
+  height: 45vh;
+  z-index: 20;
+  background-color: white;
+}
+.slide-splash .slide-texte {
+  top: 0px;
+  justify-content: center;
+  height: 100%;
+  padding-bottom: 10%;
+}
+.splash-logo {
+  width:40%;
+}
+.bee-container {
+  right: 13%;
+  bottom: 0%;
+  position: absolute;
+  opacity: 1;
+  display: flex;
+  align-items: center;
+}
+.bee-container p {
+  opacity: 0;
+  transition: opacity 2s ease;
+}
+.slide-splash:hover .bee-container p {
+  opacity: 1;
+}
+.beewiggle {
+  height: auto;
+  width: 9vw;
+}
+
+@media (max-width:500px) {
+  .splash-logo {
+    width:90%;
+  }
+  .beewiggle {
+    position: relative;
+    right: -16%;
+    bottom: 10%;
+    height: auto;
+    width: 30%;
+    height: auto;
+  }
+  .slide-splash .slide-texte {
+    padding: 4% 1% 25% 1%;
+  }
+
+}
+
+/*TEXTES*/
+#section-a .slide-texte {
+  align-items: flex-end;
+}
+#section-a .slide-texte:nth-of-type(1) {top: 7%;}
+#section-a .slide-texte:nth-of-type(2) {top: 50%;}
+
+#section-a2 .slide-texte:nth-of-type(1) {top: 2%}
+#section-a2 .slide-texte:nth-of-type(2) {
+  top: 26%;
+  align-items: flex-end;
+}
+#section-a2 .slide-texte:nth-of-type(3) {top: 76%}
+
+
+#section-b .slide-texte:nth-of-type(1) {top: 12%;}
