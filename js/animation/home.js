@@ -4,11 +4,13 @@ function animeInit1() {
     //alert("v2");
     const epsilon = 0.05;
     const slow = 10;
-    const slowScroll = 2;
-    const ScrollSpeed = 100;
 
-    var isTouch = false;
-    var deltaCumulative = 0;
+    // Sensibilité par type d'input
+    const MOUSE_WHEEL_STEP = 80;    // px par cran de molette
+    const TRACKPAD_MULTIPLIER = 3;  // amplifie les petits deltas trackpad
+    const TOUCH_MULTIPLIER = 2;     // sensibilité du swipe
+
+    var inputType = 'unknown'; // 'mouse', 'trackpad', 'touch'
     var timer = 0;
 
     var elem = document.getElementsByClassName("zttq-premiere ng-scope")[0]
@@ -91,33 +93,30 @@ function animeInit1() {
         }
     }
 
-    var engine = function(direction){
+    var timelineEl = document.getElementById("timeline-progress");
+
+    var engine = function(deltaY){
         initEngin();
 
-        let deltaY = direction*ScrollSpeed/slowScroll;
-        let style = "";
+        if (Math.abs(deltaY) < 1) return;
 
-        let lPrevStep = getStepAtTime(stepArray, virtualScroll);
         virtualScroll = mathBetween(0, virtualScroll + deltaY, totalScrollLenght);
-        virtualScroll = Math.floor(virtualScroll/Math.abs(deltaY))*Math.abs(deltaY);
         targetScrollY = getScrolltarget(stepArray, virtualScroll);
-        let lCurrStep = getStepAtTime(stepArray, virtualScroll);
-        if(!lCurrStep.boolScroll){
-            style = "background-color: aqua";
+
+        // Mise à jour timeline
+        if (timelineEl && totalScrollLenght > 0) {
+            timelineEl.style.width = (virtualScroll / totalScrollLenght * 100) + "%";
         }
+        let lCurrStep = getStepAtTime(stepArray, virtualScroll);
 
         CurrentSvg = lCurrStep.svg;
         if(!scrollPercentage[CurrentSvg]) scrollPercentage[CurrentSvg] = 0;
         scrollPercentage[CurrentSvg] = getSvgPercent(stepArray ,CurrentSvg, virtualScroll);
         if (scrollPercentage[CurrentSvg] < epsilon) scrollPercentage[CurrentSvg] = 0;
         if (scrollPercentage[CurrentSvg] > 1-epsilon) scrollPercentage[CurrentSvg] = 1;
-        //console.log(scrollPercentage[CurrentSvg],"%");
-        console.log("%c %d %d %d %f %", style, virtualScroll, targetScrollY, totalScrollLenght, Math.floor(scrollPercentage[CurrentSvg]*100));
-
 
         if (CurrentSvg >= 0) {
             let chatLength = elem.svg[CurrentSvg].length;
-            // console.log(elem.svg[CurrentSvg]);
             for (var i = 0; i < chatLength; i++) {
                 let chatBox = elem.svg[CurrentSvg][i];
                 if (scrollPercentage[CurrentSvg] > parseInt(chatBox.dataset.precentspawn)/100){
@@ -134,89 +133,54 @@ function animeInit1() {
         initEngin();
     };
 
+    // Détection trackpad vs molette :
+    // - Molette : deltaMode=1 (lignes) ou grands deltaY discrets, events espacés
+    // - Trackpad : deltaMode=0 (pixels), petits deltaY, events en rafale
     elem.onwheel = function(e){
-        let currentTime = Date.now();
-        //console.log(e.deltaMode, currentTime - timer);
-        deltaCumulative += e.deltaY;
-        if (Math.abs(deltaCumulative) < 2 || isTouch || currentTime - timer < 50) return;
-        var direction = deltaCumulative > 0 ? 1 : -1;
-        engine(direction);
-        deltaCumulative = 0;
-        timer = currentTime;
+        e.preventDefault();
+        if (inputType === 'touch') return;
+
+        var deltaY;
+        var isTrackpad = (e.deltaMode === 0 && Math.abs(e.deltaY) < 50);
+
+        if (isTrackpad) {
+            inputType = 'trackpad';
+            deltaY = e.deltaY * TRACKPAD_MULTIPLIER;
+        } else {
+            inputType = 'mouse';
+            var direction = e.deltaY > 0 ? 1 : -1;
+            deltaY = direction * MOUSE_WHEEL_STEP;
+        }
+
+        engine(deltaY);
     };
 
 
 ///////////Touch Event /////////
-    var ongoingTouches = new Array;
-    var IsSwap = false;
-    
-    
-    function ongoingTouchIndexById(idToFind) {
-      for (var i=0; i<ongoingTouches.length; i++) {
-        var id = ongoingTouches[i].identifier;
-        
-        if (id == idToFind) {
-          return i;
-        }
-      }
-      return -1;    // not found
-    }
-    
-    function handleStart(evt) {
-        isTouch = true;
-        IsSwap = false;
-      evt.preventDefault();
-      var touches = evt.changedTouches;
-            
-      for (var i=0; i<touches.length; i++) {
-        ongoingTouches.push(touches[i]);
-      }
-    }
-  
-    function handleMove(evt) {
-      evt.preventDefault();
-      var touches = evt.changedTouches;
-      
-      for (var i=0; i<touches.length; i++) {
-        var idx = ongoingTouchIndexById(touches[i].identifier);
-        console.log(ongoingTouches[idx].pageY,touches[i].pageY);
+    var lastTouchY = 0;
 
-        if (!IsSwap && Math.abs(ongoingTouches[idx].pageY - touches[i].pageY) > 20) {
-            var direction = ongoingTouches[idx].pageY < touches[i].pageY ? -1:1;
-            engine(direction*2);
-            IsSwap = true;
-        }
-      }
+    function handleStart(evt) {
+        inputType = 'touch';
+        evt.preventDefault();
+        lastTouchY = evt.touches[0].pageY;
+    }
+
+    function handleMove(evt) {
+        evt.preventDefault();
+        var touchY = evt.touches[0].pageY;
+        var deltaY = (lastTouchY - touchY) * TOUCH_MULTIPLIER;
+        lastTouchY = touchY;
+        engine(deltaY);
     }
 
     function handleEnd(evt) {
-      evt.preventDefault();
-      var touches = evt.changedTouches;
-            
-      for (var i=0; i<touches.length; i++) {
-        var idx = ongoingTouchIndexById(touches[i].identifier);
-        ongoingTouches.splice(i, 1);  // remove it; we're done
-      }
-    }
-    
-    function handleCancel(evt) {
-      evt.preventDefault();
-      var touches = evt.changedTouches;
-      
-      for (var i=0; i<touches.length; i++) {
-        ongoingTouches.splice(i, 1);  // remove it; we're done
-      }
-    }
-  
-    function startup() {
-      elem.addEventListener("touchstart", handleStart, false);
-      elem.addEventListener("touchend", handleEnd, false);
-      elem.addEventListener("touchcancel", handleCancel, false);
-      elem.addEventListener("touchleave", handleEnd, false);
-      elem.addEventListener("touchmove", handleMove, false);
+        evt.preventDefault();
     }
 
-    startup();
+    elem.addEventListener("touchstart", handleStart, {passive: false});
+    elem.addEventListener("touchmove", handleMove, {passive: false});
+    elem.addEventListener("touchend", handleEnd, {passive: false});
+    elem.addEventListener("touchcancel", handleEnd, {passive: false});
 }
 
 function mathBetween(a,c,b) {

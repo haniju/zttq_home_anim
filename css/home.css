@@ -1,4 +1,5 @@
-zttq-home, .container-scroll {
+zttq-home,
+.container-scroll {
   width: 100vw;
   display: flex;
   flex-direction: column;
@@ -9,12 +10,15 @@ zttq-home, .container-scroll {
   /*overflow-x: hidden;*/
   /*margin-top: 55px;*/
 }
+
 .zttq-section {
   flex-direction: column;
 }
-.zttq-section{
+
+.zttq-section {
   position: relative;
-  display: flex;  /* n'est pas compatible avec Safari */
+  display: flex;
+  /* n'est pas compatible avec Safari */
   box-sizing: border-box;
   /*height: 100vh;*/
 }
@@ -27,6 +31,7 @@ zttq-home, .container-scroll {
   z-index: 20;
   background-color: #85DEFD;
 }
+
 .slide-splash .slide-texte {
   position: relative;
   top: 0px;
@@ -34,10 +39,12 @@ zttq-home, .container-scroll {
   height: 100%;
   padding-bottom: 10%;
 }
+
 .splash-logo {
   width: 40vw;
   margin-top: 20vh;
 }
+
 .bee-container {
   right: 13%;
   bottom: 0%;
@@ -46,13 +53,16 @@ zttq-home, .container-scroll {
   display: flex;
   align-items: center;
 }
+
 .bee-container p {
   opacity: 0;
   transition: opacity 2s ease;
 }
+
 .slide-splash:hover .bee-container p {
   opacity: 1;
 }
+
 .beewiggle {
   height: auto;
   width: 9vw;
@@ -60,8 +70,9 @@ zttq-home, .container-scroll {
 
 @media (max-width:500px) {
   .splash-logo {
-    width:90%;
+    width: 90%;
   }
+
   .beewiggle {
     position: relative;
     right: -16%;
@@ -70,6 +81,7 @@ zttq-home, .container-scroll {
     width: 30%;
     height: auto;
   }
+
   .slide-splash .slide-texte {
     padding: 4% 1% 25% 1%;
   }
@@ -80,15 +92,58 @@ zttq-home, .container-scroll {
 #section-a .slide-texte {
   align-items: flex-end;
 }
-#section-a .slide-texte:nth-of-type(1) {top: 7%;}
-#section-a .slide-texte:nth-of-type(2) {top: 50%;}
 
-#section-a2 .slide-texte:nth-of-type(1) {top: 2%}
+#section-a .slide-texte:nth-of-type(1) {
+  top: 7%;
+}
+
+#section-a .slide-texte:nth-of-type(2) {
+  top: 50%;
+}
+
+#section-a2 .slide-texte:nth-of-type(1) {
+  top: 2%
+}
+
 #section-a2 .slide-texte:nth-of-type(2) {
   top: 26%;
   align-items: flex-end;
 }
-#section-a2 .slide-texte:nth-of-type(3) {top: 76%}
+
+#section-a2 .slide-texte:nth-of-type(3) {
+  top: 76%
+}
 
 
-#section-b .slide-texte:nth-of-type(1) {top: 12%;}
+#section-b .slide-texte:nth-of-type(1) {
+  top: 12%;
+}
+
+/* Timeline */
+.timeline-container {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 70vw;
+  z-index: 50;
+  pointer-events: none;
+  height: max-content;
+  background-color: red;
+}
+
+.timeline-track {
+  width: 100%;
+  height: 14px;
+  background-color: rgba(255, 255, 255, 0.3);
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+.timeline-progress {
+  width: 0%;
+  height: 100%;
+  background-color: var(--h3);
+  border-radius: 2px;
+  transition: width 0.15s ease-out;
+}

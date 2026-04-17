@@ -1,3 +1,11 @@
+@import "wiggle.css";
+@import "font.css";
+@import "buttons.css";
+@import "home.css";
+@import "chat.css";
+@import "header-footer.css";
+@import "beehavior.css";
+
 :root {
   --y0: #333333;
   --h1: #FFE98A;
@@ -5,16 +13,6 @@
   --h3: #fbed21;
   --h4: #F5A623;
 }
-
-@import "wiggle.css";
-@import "font.css";
-@import "buttons.css";
-@import "home.css";
-@import "chat.css";
-@import "vision.css";
-@import "contact.css";
-@import "header-footer.css";
-@import "beehavior.css";
 
 @font-face {
   font-family: 'CeraPro';
